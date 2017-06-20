@@ -1,0 +1,23 @@
+body,h1,h2,h3,h4,h5,h6,span,input,label,small{
+  font-family: 'Roboto' !important;
+}
+.img-carousel{
+  height: 160px;
+  background-size: cover;
+}
+.red {
+  background-color: white;
+}
+.f{
+  color: black;
+}
+.carousel{
+  height: 350px !important;
+}
+.flex {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.col {
+  height: 200px;
+}
