@@ -1,9 +1,8 @@
 'use strict';
-
 const Hola = (update) => {
 
   const condicion = $('<div class=""></div>');
-  const form = $('  <form action="#"></form>')
+  const form = $('<form action="#"></form>')
   const input = $('<input id="hola" type="number" name="" value="">');
   const button = $('<button class="waves-effect waves-light btn" type="button" name="button">Registrarme</button>');
   const check = $('<input type="checkbox" class="filled-in" id="filled-in-box"  />')
@@ -11,16 +10,13 @@ const Hola = (update) => {
 
   form.append(input);
   form.append(check);
-  form.append(label)
+  form.append(label);
   form.append(button);
   condicion.append(form);
 
 $( button ).prop( "disabled", true );
-// $( check ).prop( "checked" );
 
 $(form).change(function() {
-console.log(check.prop( "checked" ));
-//$( button ).prop( "disabled", false );
 if(input.val().length === 9 && check.prop( "checked" ) == true){
   $( button ).prop( "disabled", false );
 
@@ -30,55 +26,32 @@ if(input.val().length === 9 && check.prop( "checked" ) == true){
 })
 
 
-/*
-  //console.log(input.val().length);
-})
-*/
-//console.log($( check ).prop( "checked" ));
-/*
-$(check).change(function(){
-  $( button ).prop( "disabled", false );
-});
-*/
-/*
 button.on('click',(e) => {
-  alert($('input:checkbox:checked').val());
-  alert($("#hola").val());
-})
-*/
-/*
-   */
-/*
-button.on('click',(e) => {
-  //alert($('input:checkbox:checked').val());
-  //console.log($('input:checkbox:checked').val());
-  console.log($("#hola").val());
-  $("#hola").val();
-})
-*/
+  e.preventDefault();
+  const phone = input.val();
+  console.log(phone);
+  const terms = check.prop( "checked" ) == true;
 
-/*
-   e.preventDefault();
-   state.screen = "other";
-   update();
-})
-*/
-  /*
-  input.on('keyup', (e) => {
-
-  $.post('api/registerNumber', {
+  $.post('api/registerNumber/', {
     phone: phone,
-    terms:"true"
+    terms: terms
   },(respons) => {
     console.log(respons);
-    //return data.code;
+    console.log(respons.font);
+    console.log(respons.success);
+    console.log(respons.message);
+    console.log(respons.data);
+
+    if (respons.success == true) {
+      alert(respons.message);
+      state.screen = "other";
+      update();
+    }else {
+      alert(respons.message);
+    }
   },'json')
 
-  })
-
-
-*/
-
+})
 /*
 $( input ).keypress(function() {
   var value = $( this ).val();
