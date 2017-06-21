@@ -80,7 +80,7 @@ const Search = (update) => {
     state.screen = "other-page";
     update();
 
-    alert("hola");
+    //alert("hola");
   });
 
 /*

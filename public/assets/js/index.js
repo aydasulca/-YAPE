@@ -14,6 +14,8 @@ const render = (root) => {
     wrapper.append(Search(update)); //LE PASO LA FUNCION UPDATE
   } else if (state.screen == "other-page") {
     wrapper.append(Hola(update));
+  }else if (state.screen == "other") {
+		wrapper.append(Se(update));
   }
 
 }
@@ -29,17 +31,6 @@ $( _ => {
 
 })
 
-
-
-/*
-const render = (root) => {
-const wrapper = $('<div class="wrapper"></div>');
-root.append(wrapper);
-wrapper.append(Header());
-wrapper.append(Search());
-
-}
-*/
 /*
 $.post('api/registerNumber', {
 phone:"957303269",
