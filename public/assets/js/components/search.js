@@ -1,3 +1,4 @@
+/*
 'use strict';
 const SearchItem = (update) => {
   const title1 = $('<p class="f">Paga a quien quieras desde donde quieras, sin usar efectivo</p>');
@@ -8,16 +9,19 @@ const SearchItem = (update) => {
   con.append(input);
 
   input.on('keyup', (e) => {
+  const phone = input.val();
+   console.log(phone);
 
-    const phone = input.val();
-    console.log(phone);
-    $.post('api/registerNumber', {
-      phone:phone,
-      terms:"true"
-    },(respons) => {
-      console.log(respons);
-    },'json')
+  $.post('api/registerNumber', {
+    phone: phone,
+    terms:"true"
+  },(respons) => {
+    console.log(respons);
+    //return data.code;
+  },'json')
+
   })
+
 
 
 
@@ -26,6 +30,8 @@ const SearchItem = (update) => {
   return con;
   //return title1;
 }
+
+*/
 
 const Search = (update) => {
   //const container = $('<div class="modal-container"></div>');
@@ -68,12 +74,22 @@ const Search = (update) => {
     $('.carousel.carousel-slider').carousel({fullWidth: true});
   });
 
+  button.on('click',(e) => {
+
+    e.preventDefault();
+    state.screen = "other-page";
+    update();
+
+    alert("hola");
+  });
+
+/*
   button.on('click', (e) => {
     e.preventDefault();
     row.empty();
     row.append(SearchItem(update));
     //alert("hola");
   })
-
+*/
   return row;
 }
