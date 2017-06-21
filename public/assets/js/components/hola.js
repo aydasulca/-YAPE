@@ -2,11 +2,11 @@
 const Hola = (update) => {
 
   const condicion = $('<div class=""></div>');
-  const form = $('<form action="#"></form>')
+  const form = $('<form action="#"></form>');
   const input = $('<input id="hola" type="number" name="" value="">');
   const button = $('<button class="waves-effect waves-light btn" type="button" name="button">Registrarme</button>');
-  const check = $('<input type="checkbox" class="filled-in" id="filled-in-box"  />')
-  const label = $('<label for="filled-in-box">Acepto los <span class = "green-text">Terminos y Condiciones</span></label>')
+  const check = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
+  const label = $('<label for="filled-in-box">Acepto los <span class = "green-text">Terminos y Condiciones</span></label>');
 
   form.append(input);
   form.append(check);
@@ -29,7 +29,6 @@ if(input.val().length === 9 && check.prop( "checked" ) == true){
 button.on('click',(e) => {
   e.preventDefault();
   const phone = input.val();
-  console.log(phone);
   const terms = check.prop( "checked" ) == true;
 
   $.post('api/registerNumber/', {
@@ -37,14 +36,16 @@ button.on('click',(e) => {
     terms: terms
   },(respons) => {
     console.log(respons);
-    console.log(respons.font);
     console.log(respons.success);
     console.log(respons.message);
-    console.log(respons.data);
+    //console.log(respons.data.phone);
+
 
     if (respons.success == true) {
       alert(respons.message);
+      state.screen = respons.data.code;
       state.screen = "other";
+      //console.log();
       update();
     }else {
       alert(respons.message);
