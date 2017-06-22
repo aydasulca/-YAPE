@@ -1,23 +1,84 @@
-body,h1,h2,h3,h4,h5,h6,span,input,label,small{
-  font-family: 'Roboto' !important;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif !important;
+}
+.carousel-container{
+  width: 100%;
+  height: 100%;
+  min-height: 530px;
 }
 .img-carousel{
-  height: 160px;
+  height: 39%;
   background-size: cover;
 }
-.red {
-  background-color: white;
+.black-text {
+  color: #212121;
 }
-.f{
-  color: black;
+.gris-text {
+  color: #777777;
+}
+.carousel.carousel-slider
+.carousel-item h2 {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.carousel.carousel-slider
+.carousel-item p {
+  font-size: 14px;
+}
+.background-button{
+  background-color:#fbd43b;
+}
+.btn {
+  box-shadow: none;
+}
+.btn-white {
+  width: 90%;
 }
 .carousel{
-  height: 350px !important;
+  height: 310px !important;
 }
-.flex {
-  display: flex;
-  flex-direction: column-reverse;
+.columCenter {
+  margin-top: 80px;
+  margin-bottom: 90px;
 }
-.col {
-  height: 200px;
+/*pantalla 2*/
+
+.img-logo {
+  width: 45%;
+}
+.label-input {
+  width: 20%;
+  position: absolute;
+}
+input[type=number]:focus:not([readonly]), input[type=number],
+input[type=text],input[type=text]:focus:not([readonly]),
+input[type=email],input[type=email]:focus:not([readonly]),
+input[type=password],input[type=text]:focus:not([readonly]){
+  text-align: center;
+}
+input[type=number]:focus:not([readonly]),input[type=text]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),input[type=password]:focus:not([readonly]){
+  border-bottom:1.5px solid #fbd43b;
+  box-shadow: none;
+}
+.p-top {
+  position: relative;
+  margin-top: 50px;
+}
+
+.img-input {
+  position: absolute;
+  width: 8%;
+}
+.img-label{
+  width: 8%;
+  position: absolute;
+  display: block;
+}
+.icon {
+  width: 100%;
 }
