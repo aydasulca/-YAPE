@@ -13,12 +13,6 @@ const render = (root) => {
   if (state.screen == "welcome") {
     wrapper.append(Search(update)); //LE PASO LA FUNCION UPDATE
   } else if (state.screen == "other-page") {
-    wrapper.append(Hola(update));
-  }else if (state.screen == "other") {
-		wrapper.append(Se(update));
-  }else if (state.screen == "hola") {
-		wrapper.append(Suma(update));
-  }
 
 }
 
@@ -34,12 +28,3 @@ $( _ => {
   render(root);
 
 })
-
-/*
-$.post('api/registerNumber', {
-phone:"957303269",
-terms:"true"
-},(respons) => {
-console.log(respons);
-},'json')
-*/

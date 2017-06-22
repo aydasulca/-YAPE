@@ -80,7 +80,10 @@ const Search = (update) => {
     state.screen = "other-page";
     update();
 
+<<<<<<< HEAD
     //alert("hola");
+=======
+>>>>>>> f3fdbac8a589073f9bae166982498413c03f5e31
   });
 
 /*

@@ -1,67 +1,45 @@
-'use strict';
-const Hola = (update) => {
-
-  const condicion = $('<div class=""></div>');
-  const form = $('<form action="#"></form>');
-  const input = $('<input id="hola" type="number" name="" value="">');
+'use strict'
+const SearchItem = (update) => {
+  const title1 = $('<p class="f">Paga a quien quieras desde donde quieras, sin usar efectivo</p>');
+  const con = $('<div class="col"></div>');
+  const input = $('<input type="text" name="" value="">');
   const button = $('<button class="waves-effect waves-light btn" type="button" name="button">Registrarme</button>');
-  const check = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
-  const label = $('<label for="filled-in-box">Acepto los <span class = "green-text">Terminos y Condiciones</span></label>');
+  const check = $('<input type="checkbox" class="filled-in" id="filled-in-box"  />')
+const label = $('<label for="filled-in-box">Acepto los <span class = "green-text">Terminos y Condiciones</span></label>')
+  //const check = $('<input type="checkbox" id="test5">')
 
-  form.append(input);
-  form.append(check);
-  form.append(label);
-  form.append(button);
-  condicion.append(form);
-
-$( button ).prop( "disabled", true );
-
-$(form).change(function() {
-if(input.val().length === 9 && check.prop( "checked" ) == true){
-  $( button ).prop( "disabled", false );
-
-}else {
-  $( button ).prop( "disabled", true );
-}
+  con.append(input);
+  con.append(check);
+  con.append(label);
+ con.append(button);
+ /*
+  input.on('keyup', (e) => {
+  });
 })
-
-
-button.on('click',(e) => {
-  e.preventDefault();
+  */
   const phone = input.val();
-  const terms = check.prop( "checked" ) == true;
+   console.log(phone);
 
-  $.post('api/registerNumber/', {
-    phone: phone,
-    terms: terms
+  $.post('api/registerNumber', {
+    phone: "980080992",
+    terms:"true"
   },(respons) => {
-    state.phone =respons.data;
-    console.log(state.phone);
-  //  console.log(respons);
-  //  console.log(respons.success);
-  //  console.log(respons.message);
-    //console.log(respons.data.phone);
-
-
-    if (respons.success == true) {
-      alert(respons.message);
-      //state.screen = respons.data.code;
-      state.screen = "other";
-      //console.log();
-      update();
-    }else {
-      alert(respons.message);
-    }
+    console.log(respons);
+    //return data.code;
   },'json')
 
+
+  button.on('click',(e) => {
+
+    e.preventDefault();
+    state.screen = "other";
+    update();
+
+
 })
-/*
-$( input ).keypress(function() {
-  var value = $( this ).val();
-  console.log(value);
-//  $( p ).text( value );
-})
-.keyup();
-*/
-return condicion;
+
+
+
+  return con;
+  //return title1;
 }
