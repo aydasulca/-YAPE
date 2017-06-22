@@ -29,6 +29,19 @@ const Key= (update) => {
 
   $( button ).prop( "disabled", true );
 
+  $(form).change(function() {
+  if(input.val() != ""){
+    $( button ).prop( "disabled", false );
+
+  }else {
+    $( button ).prop( "disabled", true );
+  }
+  })
+  button.on('click',(e) => {
+    e.preventDefault();
+    state.screen = "Screen-8";
+    update();
+  })
 
 return row;
 }

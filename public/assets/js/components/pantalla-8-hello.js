@@ -1,6 +1,7 @@
 'use strict';
 
 const Hello= (update) => {
-  const button = $('<button class="waves-effect waves-light btn" type="button" name="button">Registrarme</button>');
-return button;
+  const sms = $('<h5 class="center-align black-text">Hello</h5>');
+
+return sms;
 }

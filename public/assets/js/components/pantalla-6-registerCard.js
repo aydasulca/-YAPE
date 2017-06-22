@@ -53,23 +53,18 @@ const registerCard= (update) => {
 
     $.post('api/registerCard/', {
     phone:state.phone.phone,
-    console.log(state.phone.phone);
-    cardNumbe:inputCard.val(),
-    console.log(inputCard.val());
+    cardNumber:inputCard.val(),
     cardMonth:inputMes.val(),
-    console.log(inputMes.val());
     cardYear:inputA.val(),
-    console.log(inputA.val());
     cardPassword:state.password
-    console.log(state.password);
 
   },(respons) => {
 
     console.log(respons);
-    /*
+
     state.screen = "Screen-7";
     update();
-    */
+
 
 },'json')
 
