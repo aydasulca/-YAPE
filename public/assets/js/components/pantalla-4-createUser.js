@@ -49,21 +49,24 @@ const createUser= (update) => {
 
 
 
-  console.log(state.phone.phone);
   button.on('click',(e) => {
     e.preventDefault();
 
     $.post('api/createUser/', {
-      phone:state.phone.phone,
-      name:name.val(),
-      email:email.val(),
-      key:key.val()
-      //console.log(state.phone);
+    phone:state.phone.phone,
+    name:name.val(),
+    email:email.val(),
+    password:key.val()
 
-    },(respons) => {
+  },(respons) => {
+    state.name = respons.data.name;
+    state.email = respons.data.email;
+    state.password = respons.data.password;
+    //console.log(respons);
+    state.screen = "Screen-5";
+    update();
 
-      console.log(respons);
-    },'json')
+},'json')
 
   })
 

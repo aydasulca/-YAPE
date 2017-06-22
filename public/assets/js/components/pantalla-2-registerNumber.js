@@ -55,7 +55,7 @@ button.on('click',(e) => {
     state.phone =respons.data;
     console.log(state.phone);
     if (respons.success == true) {
-      alert(respons.message);
+      //alert(respons.message);
       state.screen = "Screen-3";
       update();
     }else {

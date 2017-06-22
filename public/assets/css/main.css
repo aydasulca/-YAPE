@@ -19,6 +19,12 @@
 .gris-text {
   color: #777777;
 }
+.mora-text {
+  color:#482036;
+}
+.font10px{
+  font-size: 13px;
+}
 .carousel.carousel-slider
 .carousel-item h2 {
   font-size: 18px;
@@ -31,6 +37,15 @@
 }
 .background-button{
   background-color:#fbd43b;
+}
+.heigth {
+  height: 98vh;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .btn {
   box-shadow: none;

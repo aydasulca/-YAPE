@@ -36,7 +36,10 @@ const state = {
  name: null,
  email: null,
  password: null,
-
+ cardNumber: null,
+ cardMonth: null,
+ cardYear: null,
+ cardPassword: null
 }
 
 $( _ => {
