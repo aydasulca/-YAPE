@@ -8,25 +8,20 @@ const Se= (update) => {
 
   button.on('click',(e) => {
     e.preventDefault();
-    //const phonw = input.val();
-    //const phond = respons.data.phone;
-    //console.log(respons.data.phone);
+    
     $.post('api/resendCode/', {
-      phone:"980080990",
+      phone:state.phone.phone,
     }, (respons) => {
       console.log(respons);
-      console.log(respons.data.code);
-      //console.log(phone);
+      console.log(input.val());
+      console.log(state.phone.code);
+
+      if (input.val() == state.phone.code) {
+        state.screen = "hola";
+        update();
+      }
+
     }, 'json')
 })
 return form;
 }
-/*
-$.post('api/resendCode/', {
-  //phone:respons.data.phone
-  phone:"980080990",
-}, (respons) => {
-  console.log(respons);
-  //console.log(phone);
-}, 'json')
-*/

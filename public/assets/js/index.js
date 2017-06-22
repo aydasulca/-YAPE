@@ -16,12 +16,16 @@ const render = (root) => {
     wrapper.append(Hola(update));
   }else if (state.screen == "other") {
 		wrapper.append(Se(update));
+  }else if (state.screen == "hola") {
+		wrapper.append(Suma(update));
   }
 
 }
 
 const state = {
- screen:"welcome"
+ screen:"welcome",
+ phone: null,
+ name: null,
 }
 
 

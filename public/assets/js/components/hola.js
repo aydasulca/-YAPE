@@ -35,15 +35,17 @@ button.on('click',(e) => {
     phone: phone,
     terms: terms
   },(respons) => {
-    console.log(respons);
-    console.log(respons.success);
-    console.log(respons.message);
+    state.phone =respons.data;
+    console.log(state.phone);
+  //  console.log(respons);
+  //  console.log(respons.success);
+  //  console.log(respons.message);
     //console.log(respons.data.phone);
 
 
     if (respons.success == true) {
       alert(respons.message);
-      state.screen = respons.data.code;
+      //state.screen = respons.data.code;
       state.screen = "other";
       //console.log();
       update();
