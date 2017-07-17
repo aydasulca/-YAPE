@@ -9,8 +9,7 @@ const render = (root) => {
   const update = (function(){
     render(root);
   })
-
-  	if (state.screen == "welcome") {
+		if (state.screen == "welcome") {
     	wrapper.append(toRegister(update));
   	} else if (state.screen == "Screen-2"){
     	wrapper.append(registerNumber(update));

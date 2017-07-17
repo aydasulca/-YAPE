@@ -28,10 +28,29 @@ const resenCode= (update) => {
 
 
   form.append(input);
+/*
+  const reloj = $('<span class="counter">21</span>')
+  const relojInterval = setInterval(_ => {
+    const seg = ParseInt(reloj.html());
+    if (seg -1 > 0) {
+      reloj.html(seg-1);
+    } else {
+      $.post('api/resendCode',{
+        phone: state.phone.phone,
+      },(response) => {
+        if (response.success) {
+          reloj.html(21);
+          state.phone.phone = response.data;
+        }
+      });
+    }
+  },1000);
 
+  */
   $( input).keyup(function() {
     if (input.val() == state.phone.code) {
       state.screen = "Screen-4";
+      /*clearInterval(relojInterval);*/
       update();
     }
   });
