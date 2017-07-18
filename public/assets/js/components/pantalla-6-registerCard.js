@@ -9,13 +9,13 @@ const registerCard= (update) => {
   const text = $(' <p class="center-align gris-text">Por ahora solo aceptamos cuentas de ahorro y/o corrientes en soles</p>');
   const form = $('<form class ="p-top" action="#"></form>');
   const contentInput =$('<div class="col s12"></div>');
-  const inputCard = $('<input class="" type="number" name="" value="">');
+  const inputCard = $('<input class="" type="number" name="" value="" placeholder="Recuerda que tu tarjeta tiene 16 dígitos">');
   const labelInput= $('<label class ="img-label"><img class="icon" src="assets/img/icons/card.png"></label>');
   const contentInput2= $('<div class="col s12"></div>');
   const textInput= $(' <p class="center-align font10px gris-text col s6">Fecha de Vencimiento</p>');
-  const inputMes = $('<input class="col s2" type="number" name="" value="">');
+  const inputMes = $('<input class="col s2 heigth-imput" type="number" name="" value="" placeholder="Mes">');
   const p = $(' <p class="center-align gris-text col s1"> / </p>');
-  const inputA = $('<input class="col s2" type="number" name="" value="">');
+  const inputA = $('<input class="col s2 heigth-imput" type="number" name="" value="" placeholder="Año">');
   const contentButton = $('<div class = "col s12 center-align"></div>');
   const button = $('<button class="waves-effect waves-light background-button btn" type="button" name="button">CREAR CUENTA</button>');
 
@@ -39,7 +39,7 @@ const registerCard= (update) => {
 
   $( button ).prop( "disabled", true );
 
-  $(form).change(function() {
+  $(form).keyup(function() {
   if(inputCard.val().length === 16 && inputMes.val() <= 12 && inputMes.val() >= 1 && inputA.val() >= 17 && inputA.val() <= 24 ){
     $( button ).prop( "disabled", false );
 

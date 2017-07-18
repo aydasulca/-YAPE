@@ -1,8 +1,8 @@
 'use strict';
 
 const registerNumber = (update) => {
-  const row = $('<div class="row"></div>');
-  const content = $('<div class="col s12 p-top"></div>');
+  const row = $('<div class="row carousel-container"></div>');
+  const content = $('<div class="col s12 center-block"></div>');
   const contentImg = $('<div class="col s12 center-align"></div>');
   const img = $('<img class="img-logo" src="assets/img/icons/phone.png" alt="">');
   const title = $('<h5 class="center-align black-text">Para comenzar validemos tu número</h5>');
@@ -13,7 +13,7 @@ const registerNumber = (update) => {
   const labelInput= $('<label class =""><img class="label-input" src="assets/img/icons/phoneandnumber.png"></label>');
   const checkbox = $('<input type="checkbox" class="filled-in" id="filled-in-box" />');
   const label = $('<label for="filled-in-box">Acepto los <span class = "green-text">Terminos y Condiciones</span></label>');
-  const contentButton = $('<div class = "col s12 center-align"></div>');
+  const contentButton = $('<div class = "col s12 center-align button-margin"></div>');
   const button = $('<button class="waves-effect waves-light background-button btn" type="button" name="button">continuar</button>');
 
   row.append(content);
@@ -36,7 +36,14 @@ $( button ).prop( "disabled", true );
 $(form).change(function() {
 if(input.val().length === 9 && checkbox.prop( "checked" ) == true){
   $( button ).prop( "disabled", false );
+}else {
+  $( button ).prop( "disabled", true );
+}
+})
 
+$(form).keyup(function() {
+if(input.val().length === 9 && checkbox.prop( "checked" ) == true){
+  $( button ).prop( "disabled", false );
 }else {
   $( button ).prop( "disabled", true );
 }

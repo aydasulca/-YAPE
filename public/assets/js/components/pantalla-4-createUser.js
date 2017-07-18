@@ -6,7 +6,7 @@ const createUser= (update) => {
   const contentImg = $('<div class="col s12 center-align"></div>');
   const img = $('<img class="img-logo" src="assets/img/icons/lockone.png" alt="">');
   const title = $('<h5 class="center-align black-text">Crea tu Usuario Yape</h5>');
-  const text = $(' <p class="center-align gris-text ">Ingresa un nombre, email y clave de usuario.</p>');
+  const text = $(' <p class="center-align gris-text button-margin">Ingresa un nombre, email y clave de usuario.</p>');
   const form = $('<form class ="" action="#"></form>');
   const contentInput =$('<div class=""></div>');
   const labelName= $('<label class ="img-label"><img class="icon" src="assets/img/icons/user.png"></label>');
@@ -16,8 +16,8 @@ const createUser= (update) => {
   const labelKey= $('<label class ="img-label"><img class="icon" src="assets/img/icons/lock.png"></label>');
   const  key = $('<input class="" type="password" placeholder="Ingresa clave de 6 digitos" name="" value="">');
   const contentButton = $('<div class = "col s12 center-align"></div>');
-  const button = $('<button class="waves-effect waves-light background-button btn" type="button" name="button">CREAR CUENTA</button>');
-  const mensaje =$('<p class="center-align gris-text text-small">Cuida esta clave como oro, es tú acseso a Yape</p>');
+  const button = $('<button class="waves-effect waves-light background-button btn button-margin" type="button" name="button">CREAR CUENTA</button>');
+  const mensaje =$('<p class="center-align gris-text text-small">Cuida esta clave como oro, es tú acceso a Yape</p>');
 
   row.append(content);
   contentImg.append(img);
@@ -38,7 +38,7 @@ const createUser= (update) => {
 
   $( button ).prop( "disabled", true );
 
-  $(form).change(function() {
+  $(form).keyup(function() {
   if(name.val() != "" && email.val() != "" && key.val().length === 6 ){
     $( button ).prop( "disabled", false );
 

@@ -29,7 +29,7 @@ const Key= (update) => {
 
   $( button ).prop( "disabled", true );
 
-  $(form).change(function() {
+  $(form).keyup(function() {
   if(input.val() != ""){
     $( button ).prop( "disabled", false );
 

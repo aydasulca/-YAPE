@@ -12,7 +12,7 @@ const resenCode= (update) => {
   const contentInput =$('<div class=""></div>');
   const input = $('<input class="" type="number" placeholder = "- - - - -" name="" value="">');
   const labelInput= $('<label class =""><img class="img-input" src="assets/img/icons/lock.png"></label>');
-  const mensaje =$('<p class="center-align gris-text text-small">Reintentar en <span></span></p>');
+  const mensaje =$('<p class="center-align gris-text text-small">Su codigo es <span>'+state.phone.code+'</span></p>');
 
   row.append(content);
   contentImg.append(img);

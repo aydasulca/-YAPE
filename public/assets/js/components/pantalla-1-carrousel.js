@@ -2,7 +2,7 @@
 
 const toRegister = (update) => {
   const container = $('<div class="carousel-container"></div>');
-  const row = $('<div class="row columCenter"></div>');
+  const row = $('<div class="row center-block"></div>');
   const content = $('<div class="col s12"></div>');
   const carousel = $('<div class="carousel carousel-slider center col s10 offset-s1" data-indicators="true"></div>');
   const contentCarousel1 = $('<div class="carousel-item"></div>');
